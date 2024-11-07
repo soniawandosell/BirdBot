@@ -19,7 +19,7 @@
 }
 # Documentación
 roxygen2::roxygenise()
-use_vignette("introduction")
+use_vignette("Introduction_to_BirdBot")
 devtools::document()
 use_pkgdown_github_pages()
 usethis::use_pkgdown()
@@ -31,7 +31,7 @@ devtools::build()
 
 # Actualizar paquete
 system("git add .")
-system("git commit -m 'First steps'")
+system("git commit -m 'README.md'")
 system("git push origin main")
 system("git tag -a v1.0.0 -m 'Versión 1.0.0'")
 system("git push origin v0.0.0")
