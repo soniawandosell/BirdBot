@@ -27,6 +27,6 @@ A 'BirdBotSettings' object.
 Add a messages handler to the bot.
 }
 \examples{
-Settings <- add.sampling(Settings, pic.folder="./Images/", mss.saved.pic="Picture saved!", mss.caption.pic="Please send the picture again with a caption.")
+Settings <- add.messages(Settings, pic.folder="./Images/", mss.saved.pic="Picture saved!", mss.caption.pic="Please send the picture again with a caption.")
 
 }
