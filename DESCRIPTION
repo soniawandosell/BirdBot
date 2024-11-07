@@ -1,19 +1,50 @@
 Package: BirdBot
-Title: BirdBot: a sampling tool for data collection from nest-boxes on the field based on Telegram.
+Title: BirdBot
 Version: 0.0.0.9000
 Authors@R: 
-    person("Sonia", "Wandosell", , "soniawandosell@gmail.com", role = c("aut", "cre"),
+    person("Sonia", "Wandosell", , "soniawandosell@gmail.com", role = c("aut", "cre", "ctb"),
            comment = c(ORCID = "YOUR-ORCID-ID"))
-    person("Diego", "Gil", , "email", role = c("aut"),
-           comment = c(ORCID = "YOUR-ORCID-ID"))
-Description: In order to solve the problems attributed to traditional methods of field data collection we have developed a configurable tool programmed in R language: BirdBot. This application connects the storage of nest box records (or geo-located natural nests) in a remote Excel database via a Telegram chat based on simple command-based communication. By logging data via chat, BirdBot provides a backup of the data stored on each of the mobile devices. This prevents any loss of information. Another advantage over traditional methods is that user name, date and time data is stored without the need to be typed in. BirdBot offers the possibility to create topological maps from the mobile phone with information about pending and completed tasks as well as the status of nest boxes. It is also possible to create maps showing the boxes checked by each user, informing about the last nest box visited by each team member. This is an important logistical advantage, as it increases the efficiency of fieldwork and improves safety in the field by recording the route taken by each team member. In conclusion, the aim of Birdbot is to provide free software for research teams working with breeding birds in nest boxes or natural nests, facilitating fieldwork and the safeguarding of the data obtained.
+Description: A sampling tool for data collection from nest-boxes on the field based on Telegram.
 License: GPL (>= 3)
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.2.3
 URL: https://github.com/soniawandosell/birdbot
 BugReports: https://github.com/soniawandosell/birdbot/issues
+Depends:
+    R (>= 4.0.0),
+    telegram.bot,
+    xlsx,
+    lubridate,
+    stringr,
+    magrittr,
+    dplyr,
+    tidyr,
+    ggpmisc,
+    grid,
+    gridExtra,
+    usethis,
+    randomcoloR,
+    tools,
+    sf
+Imports:
+    telegram.bot,
+    xlsx,
+    lubridate,
+    stringr,
+    magrittr,
+    dplyr,
+    tidyr,
+    ggpmisc,
+    grid,
+    gridExtra,
+    usethis,
+    randomcoloR,
+    tools,
+    sf
 Suggests: 
     knitr,
-    rmarkdown
+    rmarkdown,
+    testthat (>= 3.0.0)
 VignetteBuilder: knitr
+Config/testthat/edition: 3

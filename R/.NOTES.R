@@ -13,7 +13,7 @@
   library(randomcoloR)
   library(tools)
   library(sf)
-  library(devtools);library(roxygen2)
+  library(devtools);library(roxygen2);library(pkgdown)
   # library(xml2)
   # load("C:/Users/CBM/Dropbox/Personal/Databot/.RData")
 }
@@ -22,13 +22,20 @@ roxygen2::roxygenise()
 use_vignette("introduction")
 devtools::document()
 use_pkgdown_github_pages()
+usethis::use_pkgdown()
+pkgdown::build_site()
+usethis::use_testthat()
+devtools::check()
+devtools::build()
+
 
 # Actualizar paquete
 system("git add .")
-system("git commit -m 'Actualización'")
+system("git commit -m 'First steps'")
 system("git push origin main")
 system("git tag -a v1.0.0 -m 'Versión 1.0.0'")
-system("git push origin v1.0.0")
+system("git push origin v0.0.0")
+usethis::use_pkgdown_github_pages()
 
 # Package functions -----
 file.edit("R/database.to.calendar.R")
@@ -45,7 +52,7 @@ file.edit("R/add.sampling.R")
 file.edit("R/add.map.R")
 file.edit("R/add.rewrite.R")
 file.edit("R/add.view.R")
-file.edit("R/add.pictures.R")
+file.edit("R/add.messages.R")
 file.edit("R/add.download.R")
 
 #---------------------------------

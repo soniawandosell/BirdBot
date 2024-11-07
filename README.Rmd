@@ -1,0 +1,84 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
+
+# BirdBot
+
+<!-- badges: start -->
+<!-- badges: end -->
+
+The goal of BirdBot is to ...
+
+## Installation
+
+You can install the development version of BirdBot from [GitHub](https://github.com/) with:
+
+``` r
+# install.packages("devtools")
+devtools::install_github("soniawandosell/BirdBot")
+```
+
+## Example
+
+```{r settings file}
+library(BirdBot)
+Settings <- set.settings(dir ="./data/Settings.xlsx",
+                         date.format="%d/%m/%Y",
+                         map.file="./data/StudyArea.kml")
+```
+
+
+```{r database file}
+Settings <- set.database(Settings,
+                         db.name = "database", 
+                         firstday = "2024-10-28", 
+                         lastday = "2024-11-06")
+```
+
+```{r adding commands}
+Settings <- add.start(Settings, 
+                      mss.welcome= "Welcome to the starlings data collection bot.",
+                      mss.commands="There are some commands you should learn:")
+
+Settings <- add.sampling(Settings, 
+                         command="nest", 
+                         db.name ="database", 
+                         description="add info to each nest for today", 
+                         sep="-", 
+                         today= 0, 
+                         type="Info", 
+                         mss.filled=" info filled.", 
+                         mss.tasks="The task for today was: ", 
+                         mss.rewrite="Info already submited", 
+                         mss.previous=" was previously filled as:")
+
+Settings <- add.map(Settings, 
+                    command="donetoday", 
+                    db.name ="database", 
+                    description="map of tasks done today", 
+                    type="User", 
+                    team=NA, 
+                    today= 0, 
+                    title=NA, 
+                    completed="done", 
+                    caption="Tasks done today", 
+                    mss.empty="No tasks done today")
+
+Settings <- add.messages(Settings, 
+                         pic.folder="./Images/", 
+                         mss.saved.pic="Picture saved!", 
+                         mss.caption.pic="Please send the picture again with a caption.")
+
+```
+

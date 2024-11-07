@@ -6,16 +6,13 @@
 #' @param mss.caption Requests a caption to title the picture with.
 #' @return A 'BirdBotSettings' object.
 #' @examples
-#' Settings <- add.sampling(Settings, pic.folder="./Images/", mss.saved.pic="Picture saved!", mss.caption.pic="Please send the picture again with a caption.")
+#' Settings <- add.messages(Settings, pic.folder="./Images/", mss.saved.pic="Picture saved!", mss.caption.pic="Please send the picture again with a caption.")
 #'
 #'@export
 add.messages <- function(x=Settings,
                          pic.folder="./Images/",
                          mss.saved.pic="Picture saved!",
                          mss.caption.pic="Please send the picture again with a caption."){
-  if(!db.name%in%names(x$Databases$Data)){
-    stop("Database should be one of the ones included in Settings.")
-  }
   messages.f <- function(bot=x$Configuration$bot,update){
     if(length(update$message$photo[[1L]]$file_id> 0L)){
         if(update$message$from$id %in% x$Users$Allowed){
