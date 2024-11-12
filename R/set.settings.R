@@ -146,7 +146,7 @@ set.settings <- function(dir ="./data/Settings.xlsx",
 
     #Locations
     if(!is.na(map.file)){
-      map.sf <- st_read(map.file)
+      map.sf <- suppressMessages(st_read(map.file))
       # Nests
       puntos_sf <- map.sf[st_geometry_type(map.sf) == "POINT", ]
       nests.df <- puntos_sf %>%

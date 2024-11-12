@@ -1,5 +1,4 @@
 ---
-title: "Introduction_to_BirdBot"
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{Introduction_to_BirdBot}
@@ -14,58 +13,89 @@ knitr::opts_chunk$set(
 )
 ```
 
-```{r setup}
+# `BirdBot`: <img src="images/BirdBot.png" style="float: right; border: 0; margin: auto;" align="right" height="139"/>
+
+## A sampling tool for data collection from nest-boxes on the field based on Telegram 
+
+# Introduction to `BirdBot`
+
+### Installing `BirdBot`
+
+```{r install, eval=FALSE}
+install.packages("devtools")
+devtools::install_github("soniawandosell/BirdBot")
+```
+
+```{r setup, warning=FALSE, message=FALSE}
 library(BirdBot)
 ```
 
+### Setting up the bot configuration
+
+For these you will need to create a `BirdBotSettings` file. Use the `set.settings()` function for this.
+
 ```{r settings file}
-library(BirdBot)
-Settings <- set.settings(dir ="./data/Settings.xlsx",
+Bot <- set.settings(dir ="./data/Settings.xlsx",
                          date.format="%d/%m/%Y",
                          map.file="./data/StudyArea.kml")
 ```
 
+You will need to run previous code again after filling your Settings excel file.
+
+### Creating the database(s)
+
+To create databases use `set.database()` function. Choose dates and a database name. The database will be saved on your working directory. Working with R projects is recommended.
 
 ```{r database file}
-Settings <- set.database(Settings,
-                         db.name = "database", 
-                         firstday = "2024-10-28", 
-                         lastday = "2024-11-06")
+Bot <- set.database(Bot,
+                    db.name = "database", 
+                    firstday = "2024-10-28", 
+                    lastday = "2024-11-06")
 ```
+
+### Adding commands to the bot
+
+Next step is adding commands to the bot. Here we have some examples:
 
 ```{r adding commands}
-Settings <- add.start(Settings, 
-                      mss.welcome= "Welcome to the starlings data collection bot.",
-                      mss.commands="There are some commands you should learn:")
+Bot <- add.start(Bot, 
+                 mss.welcome= "Welcome to the starlings data collection bot.",
+                 mss.commands="There are some commands you should learn:")
 
-Settings <- add.sampling(Settings, 
-                         command="nest", 
-                         db.name ="database", 
-                         description="add info to each nest for today", 
-                         sep="-", 
-                         today= 0, 
-                         type="Info", 
-                         mss.filled=" info filled.", 
-                         mss.tasks="The task for today was: ", 
-                         mss.rewrite="Info already submited", 
-                         mss.previous=" was previously filled as:")
-
-Settings <- add.map(Settings, 
-                    command="donetoday", 
+Bot <- add.sampling(Bot, 
+                    command="nest", 
                     db.name ="database", 
-                    description="map of tasks done today", 
-                    type="User", 
-                    team=NA, 
+                    description="add info to each nest for today", 
+                    sep="-", 
                     today= 0, 
-                    title=NA, 
-                    completed="done", 
-                    caption="Tasks done today", 
-                    mss.empty="No tasks done today")
+                    type="Info", 
+                    mss.filled=" info filled.", 
+                    mss.tasks="The task for today was: ", 
+                    mss.rewrite="Info already submited", 
+                    mss.previous=" was previously filled as:")
 
-Settings <- add.messages(Settings, 
-                         pic.folder="./Images/", 
-                         mss.saved.pic="Picture saved!", 
-                         mss.caption.pic="Please send the picture again with a caption.")
+Bot <- add.map(Bot, 
+               command="donetoday", 
+               db.name ="database", 
+               description="map of tasks done today", 
+               type="User", 
+               team=NA, 
+               today= 0, 
+               title=NA, 
+               completed="done", 
+               caption="Tasks done today", 
+               mss.empty="No tasks done today")
 
+Bot <- add.messages(Bot, 
+                    pic.folder="./Images/", 
+                    mss.saved.pic="Picture saved!", 
+                    mss.caption.pic="Please send the picture again with a caption.")
 ```
 
+### Running the bot
+
+Any time you want to use the bot you will have to use `run.Bot()` function. If R stops, the Bot no longer will be working.
+
+```{r running, eval=FALSE}
+run.Bot(Bot)
+```
