@@ -20,6 +20,7 @@
 # Documentación
 roxygen2::roxygenise()
 use_vignette("Introduction_to_BirdBot")
+use_vignette("BirdBot")
 devtools::document()
 use_pkgdown_github_pages()
 usethis::use_pkgdown()
@@ -27,6 +28,7 @@ pkgdown::build_site()
 usethis::use_testthat()
 devtools::check()
 devtools::build()
+pkgdown::build_site()
 
 
 # Actualizar paquete
@@ -94,8 +96,17 @@ plot(qr)
 edit_git_config()
 use_git()
 
-#
-#Package functions:
+library(hexSticker)
+
+img <- ("./vignettes/Img.png")
+sticker(img, package="BirdBot",
+        p_size=27,p_color = "white",
+        h_color= "#217748", h_fill = "lightblue",
+        s_x=1, s_y=.75, s_width=.5,
+        filename="man/figures/BirdBot.png")
+
+
+#Packageimg#Package functions:
 #_____________________
 #IDEAS:
 #

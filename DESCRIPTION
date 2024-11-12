@@ -1,5 +1,4 @@
 Package: BirdBot
-Title: BirdBot
 Version: 0.0.0.9000
 Authors@R: 
     person("Sonia", "Wandosell", , "soniawandosell@gmail.com", role = c("aut", "cre", "ctb"),
