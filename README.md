@@ -49,11 +49,18 @@ devtools::install_github("soniawandosell/BirdBot")
   excel file.  
 - `calendar.to.database()`: updates the database with the calendar excel
   file.  
+- `add.messages()`: adds a message handler to the bot.  
+- `run.Bot()`: runs the bot.  
+- `database.to.calendar()`: transforms the database into a calendar view
+  excel file.  
+- `calendar.to.database()`: updates the database with the calendar excel
+  file.
 
 ## Citation
 
 If you use BirdBot, please cite the package as:
 
 ``` r
+>>>>>>> 77411899b4a73fd27a414aa5214002df9baaf60d
 print(citation("BirdBot"), style = "text")
 ```

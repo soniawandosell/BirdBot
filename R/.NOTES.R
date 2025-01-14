@@ -20,7 +20,7 @@
 # Documentación
 roxygen2::roxygenise()
 use_vignette("Introduction_to_BirdBot")
-use_vignette("BirdBotPoster")
+use_vignette("BirdBot")
 devtools::document()
 use_pkgdown_github_pages()
 usethis::use_pkgdown()
@@ -103,6 +103,7 @@ use_git()
 
 library(hexSticker)
 
+<<<<<<< HEAD
 img <- ("C:/Users/CBM/Desktop/birdbotpng.png")
 sticker(img, package="BirdBot",
         p_size=28,p_color = "mediumslateblue",
@@ -110,6 +111,15 @@ sticker(img, package="BirdBot",
         s_x=1, s_y=.8, s_width=.47,
         filename="man/figures/BirdBot.png")
 ?sticker()
+=======
+img <- ("./vignettes/Img.png")
+sticker(img, package="BirdBot",
+        p_size=27,p_color = "white",
+        h_color= "#217748", h_fill = "lightblue",
+        s_x=1, s_y=.75, s_width=.5,
+        filename="man/figures/BirdBot.png")
+
+>>>>>>> 77411899b4a73fd27a414aa5214002df9baaf60d
 
 #Packageimg#Package functions:
 #_____________________
