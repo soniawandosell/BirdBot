@@ -14,6 +14,8 @@ public.](https://www.repostatus.org/badges/latest/wip.svg)](https://www.repostat
 
 <!-- badges: end -->
 
+<img src="vignettes/birdbot_poster.png"/>
+
 ## Installation
 
 You can install the development version of BirdBot from
@@ -60,7 +62,5 @@ devtools::install_github("soniawandosell/BirdBot")
 
 If you use BirdBot, please cite the package as:
 
-``` r
->>>>>>> 77411899b4a73fd27a414aa5214002df9baaf60d
-print(citation("BirdBot"), style = "text")
-```
+    #> Wandosell S (????). _BirdBot: _. R package version 0.0.0.9000,
+    #> <https://github.com/soniawandosell/birdbot>.

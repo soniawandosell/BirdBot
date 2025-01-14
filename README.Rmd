@@ -26,6 +26,10 @@ knitr::opts_chunk$set(
 
 <!-- badges: end -->
 
+<img src="vignettes/birdbot_poster.png"/>
+
+
+
 ## Installation
 
 You can install the development version of BirdBot from [GitHub](https://github.com/) with:
@@ -68,7 +72,6 @@ devtools::install_github("soniawandosell/BirdBot")
 If you use BirdBot, please cite the package as:
 
 
-```{r eval=FALSE,warning=FALSE,message=FALSE}
->>>>>>> 77411899b4a73fd27a414aa5214002df9baaf60d
+```{r echo=F, warning=FALSE,message=FALSE}
 print(citation("BirdBot"), style = "text")
 ```
