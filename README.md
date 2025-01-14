@@ -54,5 +54,6 @@ devtools::install_github("soniawandosell/BirdBot")
 
 If you use BirdBot, please cite the package as:
 
-Wandosell S (????). *BirdBot: *. R package version 0.0.0.9000,
-<https://github.com/soniawandosell/birdbot>.
+``` r
+print(citation("BirdBot"), style = "text")
+```

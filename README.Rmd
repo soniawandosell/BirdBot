@@ -63,6 +63,6 @@ devtools::install_github("soniawandosell/BirdBot")
 
 If you use BirdBot, please cite the package as:
 
-```{r echo=FALSE, results='asis', cache = FALSE, warning=FALSE,message=FALSE}
+```{r eval=FALSE,warning=FALSE,message=FALSE}
 print(citation("BirdBot"), style = "text")
 ```
