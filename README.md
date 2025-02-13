@@ -57,7 +57,3 @@ devtools::install_github("soniawandosell/BirdBot")
   excel file.  
 - `calendar.to.database()`: updates the database with the calendar excel
   file.
-
-## Citation
-
-If you use BirdBot, please cite the package as "Wandosell et al., in prep"
