@@ -69,9 +69,9 @@ devtools::install_github("soniawandosell/BirdBot")
 
 ## Citation
 
-If you use BirdBot, please cite the package as:
+If you use BirdBot, please cite the package as "Wandosell et al., in prep"
 
 
-```{r echo=F, warning=FALSE,message=FALSE}
+```{r echo=F, eval= F , warning=FALSE,message=FALSE}
 print(citation("BirdBot"), style = "text")
 ```
