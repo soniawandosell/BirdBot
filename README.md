@@ -28,7 +28,7 @@ devtools::install_github("soniawandosell/BirdBot")
 
 ## How to use
 
-1.  Configure the bot. There is an example in the [Introduction to BirdBot](vignettes/Introduction_to_BirdBot.Rmd")
+1.  Configure the bot. There is an example in the [Introduction to BirdBot](vignettes/Introduction_to_BirdBot.Rmd)
 2.  Run the bot and collect data in the field.
 3.  Edit the database.
 
