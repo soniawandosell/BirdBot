@@ -46,7 +46,6 @@ devtools::install_github("soniawandosell/BirdBot")
 - `add.download()`: adds a download command to the bot.  
 - `add.summary()`: adds a summary command to the bot.  
 - `add.messages()`: adds a message handler to the bot.  
-- `run.Bot()`: runs the bot.  
 - `database.to.calendar()`: transforms the database into a calendar view
   excel file.  
 - `calendar.to.database()`: updates the database with the calendar excel
@@ -57,10 +56,3 @@ devtools::install_github("soniawandosell/BirdBot")
   excel file.  
 - `calendar.to.database()`: updates the database with the calendar excel
   file.
-
-## Citation
-
-If you use BirdBot, please cite the package as:
-
-    #> Wandosell S (????). _BirdBot: _. R package version 0.0.0.9000,
-    #> <https://github.com/soniawandosell/birdbot>.

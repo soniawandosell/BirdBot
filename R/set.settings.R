@@ -32,7 +32,7 @@ set.settings <- function(dir ="./data/Settings.xlsx",
                            type=NA,
                            description=NA,
                            color=NA)
-    nests.df <- data.frame(plot.id=NA,
+    nests.df <- data.frame(nests.id=NA,
                            x=NA,
                            y=NA,
                            color=NA)
@@ -46,7 +46,7 @@ set.settings <- function(dir ="./data/Settings.xlsx",
                               x2=NA,
                               y1=NA,
                               y2=NA,
-                              colour=NA,
+                              color=NA,
                               size=NA)
     sheets <- c("Token","Users","Tasks","Nests","Map.labels","Map.segments")
     dfs <- list(token.df,users.df,tasks.df,nests.df,labels.df,segments.df)
@@ -86,6 +86,7 @@ set.settings <- function(dir ="./data/Settings.xlsx",
 
       class(x) <- "BirdBotSettings"
     }
+    x <- get(load( file = paste0((file_path_sans_ext(dir)), ".RData")))
     wb <- loadWorkbook(dir)
     #Configuration
     x$Configuration$token <- read.xlsx(dir, sheetName = "Token")[1,1]
@@ -127,7 +128,7 @@ set.settings <- function(dir ="./data/Settings.xlsx",
     x$Content$Tasks.df <- read.xlsx(dir,sheetName = "Tasks")
     x$Content$Tasks <- x$Content$Tasks.df[which(x$Content$Tasks.df$type!="Status"),]$name
     x$Content$Status <- x$Content$Tasks.df[which(x$Content$Tasks.df$type=="Status"),]$name
-    wb <- loadWorkbook(dir)
+
     colors.df <- BirdBot:::get.color.df(dir, "Tasks")
     x$Content$Tasks.df$color <- ifelse(!is.na(colors.df$color),colors.df$color,
                                        x$Content$Tasks.df$color)

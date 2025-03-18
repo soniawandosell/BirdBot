@@ -59,9 +59,6 @@ add.summary <- function(x=Settings,
                 n<- n+1
               }
             }
-
-
-
           }
         }
         if(completed=="to-do"|completed=="all"){
@@ -99,8 +96,7 @@ add.summary <- function(x=Settings,
                         text = x$Messages$mss.request)
       }
     }
-  }
-  x$Commands[[command]]<- map.f
+  x$Commands[[command]]<- summary.f
   x$Commands.description[[command]]<- description
 
   x$Configuration$updater <- x$Configuration$updater +

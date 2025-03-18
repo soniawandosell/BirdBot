@@ -29,12 +29,11 @@ set.database <- function(x=Settings,
     data$Comments <- NA
     write.csv(data,dir, row.names = F)
   }else{
-    data <- read.csv(dir)%>%mutate(Date=as.Date(Date,
-                                                format=x$Configuration$date.format))
+    data <- read.csv(dir)%>%mutate(Date=as.Date(Date))
+    lastday <- as.Date(lastday)
+    firstday <- max(data$Date)+1
     if(lastday>max(data$Date)){
-      lastday <- as.Date(lastday)
       plots <- x$Locations$Nests$nests.id
-      firstday <- max(data$Date)+1
       data2 <- expand.grid( Nests = plots, Date = seq(firstday, lastday, 1))
       data <- bind_rows(data, data2)
       write.csv(data,dir, row.names = F)

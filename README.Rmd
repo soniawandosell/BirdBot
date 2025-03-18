@@ -28,8 +28,6 @@ knitr::opts_chunk$set(
 
 <img src="vignettes/birdbot_poster.png"/>
 
-
-
 ## Installation
 
 You can install the development version of BirdBot from [GitHub](https://github.com/) with:
@@ -59,7 +57,6 @@ devtools::install_github("soniawandosell/BirdBot")
 -   `add.download()`: adds a download command to the bot.\
 -   `add.summary()`: adds a summary command to the bot.\
 -   `add.messages()`: adds a message handler to the bot.\
--   `run.Bot()`: runs the bot.\
 -   `database.to.calendar()`: transforms the database into a calendar view excel file.\
 -   `calendar.to.database()`: updates the database with the calendar excel file.\
 -   `add.messages()`: adds a message handler to the bot.\
@@ -67,11 +64,3 @@ devtools::install_github("soniawandosell/BirdBot")
 -   `database.to.calendar()`: transforms the database into a calendar view excel file.\
 -   `calendar.to.database()`: updates the database with the calendar excel file.
 
-## Citation
-
-If you use BirdBot, please cite the package as:
-
-
-```{r echo=F, warning=FALSE,message=FALSE}
-print(citation("BirdBot"), style = "text")
-```
