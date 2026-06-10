@@ -1,0 +1,79 @@
+---
+title: "`BirdBot`: A sampling tool for data collection from nest-boxes on the field based on Telegram"
+author: "Sonia Wandosell Carrasco"
+date: "`r Sys.Date()`"
+output: 
+  html_document:
+    toc: true
+    toc_float: true
+    toc_collapsed: true
+    toc_depth: 4
+    theme: journal
+vignette: >
+  %\VignetteIndexEntry{BirdBot}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+bibliography: references.bib
+---
+
+## Abstract
+
+::: {align="justify"}
+A fundamental concern in contemporary research is the safeguarding of empirical data and transparency in the data acquisition process.
+Traditional field data collection (paper and pencil)is subject to many limitations and open to accidental loss.
+For example, changing weather conditions or the inherent difficulties in coordinating large working groups can hamper data reliability.
+Mobile devices are now almost universally accessible, and the development of data logging applications is booming.
+These new applications could optimise work in the field by providing security, ease of communication and coordination between users in a team.
+Currently, many research groups involved in bird ecology studies store their databases in Excel files.
+It is possible to design a mobile application for data collection that facilitates the flow of information from the mobile device to the final Excel file, eliminating the intermediate step of transcribing data from the field notebook to the computer.
+In order to solve the problems attributed to traditional methods of field data collection we have developed a configurable tool programmed in R language: [`BirdBot`](https://github.com/soniawandosell/BirdBot).
+This application connects the storage of nest box records (or geo-located natural nests) in a remote Excel database via a Telegram chat based on simple command-based communication.
+By logging data via chat, BirdBot provides a backup of the data stored on each of the mobile devices.
+This prevents any loss of information.
+Another advantage over traditional methods is that user name, date and time data is stored without the need to be typed in.
+[`BirdBot`](https://github.com/soniawandosell/BirdBot) offers the possibility to create topological maps from the mobile phone with information about pending and completed tasks as well as the status of nest boxes.
+It is also possible to create maps showing the boxes checked by each user, informing about the last nest box visited by each team member.
+This is an important logistical advantage, as it increases the efficiency of fieldwork and improves safety in the field by recording the route taken by each team member.
+In conclusion, the aim of Birdbot is to provide free software for research teams working with breeding birds in nest boxes or natural nests, facilitating fieldwork and the safeguarding of the data obtained.
+:::
+
+
+Telegram bot package [@telegram.bot] has been used to build this package. All is based on R [@rcoreteam2022].
+
+
+# Introduction
+
+Qué es BirdBot: Es un paquete de R que conecta el almacenamiento de registros de cajas nido (o nidos naturales geo-localizados) con una base de datos de Excel remota mediante un chat de Telegram mediante el uso de comandos sencillos. 
+
+Muchos usamos spreadsheets para guardar los datos
+Métodos digitales evitan los errores de estar transcribiendo información
+Te obliga a planear cómo recoges los datos de antemano, porque hay que setup el database lo primero. Esto hace planificar mejor.
+ Defining Data Categories and Collection Methods
+La funcion de leyenda permite ser consistente con la recogida de datos. Es el lugar para explicar el data dictionary
+Internet conectivity
+Dont worry about legible handwritting, or not having enough space in the comments section
+avoid human error
+ prepopulate complex field data within a digital field form if the digital form is connected to a data source. 
+ help documentation directly into the form
+fields. Help documentation can give guidance to the user about what is expected in that field answer. This help
+documentation can take several different forms, including:
+on-screen documentation that is always displayed
+warnings or errors that are shown only under specific conditions
+pop-up messages to tell the user that needed fields have not been populated and must be completed to proceed
+on-demand help that is displayed when a user selects to view help documentation
+Digital forms can be designed to only accept a response from a list of valid reference
+values, with default answers to a form field prepopulated with the most common expected answer so the user
+can make a selection and move on.  caja nido
+
+Data storage destination. Know where the form’s field data are going and if/how they will be shared. Design a
+field form response with the knowledge of the expected data type and length of the database field it will call
+home. 
+data encoding
+data reporting
+
+Field data are often collected in less than ideal conditions and optimized workflows are usually not available. However, this does not mean that field data should not be treated with the same rigor that data collected in controlled laboratory settings demand. 
+
+## `BirdBot` workflow
+
+
+# References
